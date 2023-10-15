@@ -30,9 +30,6 @@ class Creature:
     def takeDamage(self, dmg_object):
         pass
 
-    def attack(self):
-        pass
-
     def action(self):
         pass
 
@@ -41,6 +38,9 @@ class Creature:
 
     def bonusAction(self):
         pass
-    
+
+    def reaction(self):
+        pass
+
 
 

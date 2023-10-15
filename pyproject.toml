@@ -28,7 +28,8 @@ dependencies = [
   "click",
   "typer[all]",
   "fastapi[all]",
-  "uvicorn[standard]"
+  "uvicorn[standard]",
+  "pydantic"
 
 ]
 
