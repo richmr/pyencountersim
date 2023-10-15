@@ -11,7 +11,7 @@ requires-python = ">=3.7"
 license = "MIT"
 keywords = []
 authors = [
-  { name = "richmr", email = "richmr@users.noreply.github.com" },
+  { name = "richmr", email = "richmr2174@gmail.com" },
 ]
 classifiers = [
   "Development Status :: 4 - Beta",
@@ -26,12 +26,16 @@ classifiers = [
 ]
 dependencies = [
   "click",
+  "typer[all]",
+  "fastapi[all]",
+  "uvicorn[standard]"
+
 ]
 
 [project.urls]
-Documentation = "https://github.com/unknown/pyencountersim#readme"
-Issues = "https://github.com/unknown/pyencountersim/issues"
-Source = "https://github.com/unknown/pyencountersim"
+Documentation = "https://github.com/richmr/pyencountersim#readme"
+Issues = "https://github.com/richmr/pyencountersim/issues"
+Source = "https://github.com/richmr/pyencountersim"
 
 [project.scripts]
 pyencountersim = "pyencountersim.cli:pyencountersim"
