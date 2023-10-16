@@ -1,5 +1,5 @@
 
-from ..src.pyencountersim.Creatures import CreatureState
+from pyencountersim.Creatures import CreatureState
 
 def test_partialCS():
     # testing partially filling in a model

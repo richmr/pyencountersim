@@ -11,5 +11,6 @@
     "python.analysis.enablePytestSupport": false,
     "python.testing.pytestArgs": [
         "tests"
-    ]
+    ],
+    "python.testing.pytestPath": "pytest"
 }
