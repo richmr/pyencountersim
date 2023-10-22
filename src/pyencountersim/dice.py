@@ -2,6 +2,8 @@
 import re
 import random
 
+from pydantic import BaseModel
+
 def roll(roll_str:str) -> int:
     """
     Converts roll_str like 2d6+4 to a random roll result
@@ -21,14 +23,18 @@ def roll(roll_str:str) -> int:
     
     return result
 
-def roll20(mod:int = 0) -> tuple:
+class d20result(BaseModel):
+    raw:int
+    total:int
+
+def roll20(mod:int = 0) -> d20result:
     """
     Rolls a single d20.
     Returns a tuple with (raw, total) to allow for crit assessment
     """
     raw = random.randint(1,20)
     total = raw+mod
-    return (raw, total)
+    return d20result(raw=raw, total=total)
 
 
 
