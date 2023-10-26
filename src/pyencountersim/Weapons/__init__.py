@@ -2,7 +2,7 @@
 from enum import Enum, auto
 import warnings
 
-from pyencountersim.Creatures import Creature
+# from pyencountersim.Creatures import Creature # Uh oh, circular imports here.  May need to separate basics out
 
 class DamageTypes(Enum):
     Acid = auto()

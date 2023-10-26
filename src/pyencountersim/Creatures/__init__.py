@@ -14,28 +14,28 @@ class Abilities(Enum):
     Cha = "Cha"
 
 class AbilityScoresType(BaseModel):
-    Abilities.Str:int = Field(default=10)
-    Abilities.Dex:int = Field(default=10)
-    Abilities.Int:int = Field(default=10)
-    Abilities.Con:int = Field(default=10)
-    Abilities.Wis:int = Field(default=10)
-    Abilities.Cha:int = Field(default=10)
+    Str:int = Field(default=10)
+    Dex:int = Field(default=10)
+    Int:int = Field(default=10)
+    Con:int = Field(default=10)
+    Wis:int = Field(default=10)
+    Cha:int = Field(default=10)
 
 class AbilityModsType(BaseModel):
-    Abilities.Str:int = Field(default=0)
-    Abilities.Dex:int = Field(default=0)
-    Abilities.Int:int = Field(default=0)
-    Abilities.Con:int = Field(default=0)
-    Abilities.Wis:int = Field(default=0)
-    Abilities.Cha:int = Field(default=0)
+    Str:int = Field(default=0)
+    Dex:int = Field(default=0)
+    Int:int = Field(default=0)
+    Con:int = Field(default=0)
+    Wis:int = Field(default=0)
+    Cha:int = Field(default=0)
 
 class SavingModsType(BaseModel):
-    Abilities.Str:int = Field(default=0)
-    Abilities.Dex:int = Field(default=0)
-    Abilities.Int:int = Field(default=0)
-    Abilities.Con:int = Field(default=0)
-    Abilities.Wis:int = Field(default=0)
-    Abilities.Cha:int = Field(default=0)
+    Str:int = Field(default=0)
+    Dex:int = Field(default=0)
+    Int:int = Field(default=0)
+    Con:int = Field(default=0)
+    Wis:int = Field(default=0)
+    Cha:int = Field(default=0)
 
 class CreatureStats(BaseModel):
     id:int
@@ -157,7 +157,7 @@ class Creature:
     ### Saving Throw
 
     def passSavingsThrow(self, saving_throw_type:Abilities, DC:int, allow_mod:bool = True) -> bool:
-        result = roll20(self.current_state.SavingMods[saving_throw_type])
+        result = roll20(getattr(self.current_state.SavingMods, saving_throw_type.value))
         check = result.raw
         if allow_mod:
             check = result.total
