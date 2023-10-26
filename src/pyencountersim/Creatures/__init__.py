@@ -46,8 +46,15 @@ class Creature:
         self._startTurnStack = []
         self._endTurnStack = []
         self._target = None
+        self.initiative = 0
         pass
 
+    def rollInitiative(self, addl_modifier:int = 0) -> int:
+        total_mod = self.current_state.AbilityMods.Dex + addl_modifier
+        roll_result = roll20(mod=total_mod)
+        self.initiative = roll_result.total
+        return roll_result.total
+    
     def takeTurn(self):
         pass
 
@@ -137,30 +144,3 @@ class Creature:
     
 
 
-class TargetAffector:
-    """
-    All things that affect Creatures should use this as base class
-    These can be attacks, heals, banes, boons
-    """
-
-    def __init__(self) -> None:
-        # placeholder
-        pass
-
-    def affect(self, targetObj:Creature) -> None:
-        """
-        This method is intended to be overridden by spells or other things that affect Creatures
-        The various methods of the Creature are called to apply effects
-        """
-        warnings.warn("Base 'TargetAffector.affect()' called.  This does nothing.", RuntimeWarning)
-        return
-    
-    def attack(self, targetObj:Creature) -> None:
-        """
-        This method is intended to be overridden by weapons, spells, or other things that damage Creatures
-        The various methods of the Creature are called to apply damage and effects
-
-        Really no difference between this and 'affect' but called 'attack' for clarity of intent
-        """
-        warnings.warn("Base 'TargetAffector.attack()' called.  This does nothing.", RuntimeWarning)
-        return

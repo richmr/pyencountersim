@@ -53,3 +53,4 @@ class WeaponTypes(Enum):
     Magic = auto()
     ColdIron = auto()
     Silver = auto()
+
