@@ -4,26 +4,7 @@ import warnings
 
 # from pyencountersim.Creatures import Creature # Uh oh, circular imports here.  May need to separate basics out
 
-class DamageTypes(Enum):
-    Acid = auto()
-    Bludgeoning = auto()
-    Cold = auto()
-    Fire = auto()
-    Force = auto()
-    Lightning = auto()
-    Necrotic = auto()
-    Piercing = auto()
-    Poison = auto()
-    Psychic = auto()
-    Radiant = auto()
-    Slashing = auto()
-    Thunder = auto()
 
-class WeaponTypes(Enum):
-    Normal = auto()
-    Magic = auto()
-    ColdIron = auto()
-    Silver = auto()
 
 """
 10/21/2023

@@ -1,4 +1,5 @@
-from pyencountersim.Creatures import CreatureStats, Abilities
+from pyencountersim.Creatures import CreatureStats
+from pyencountersim.Foundations import Abilities
 
 def test_default_stat_load():
     cs = CreatureStats(id=1)

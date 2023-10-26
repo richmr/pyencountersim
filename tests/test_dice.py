@@ -33,8 +33,8 @@ def test_bad_roll_str():
 
 def test_d20():
     result = [roll20() for i in range(1000)]
-    raws = [r[0] for r in result]
-    totals = [r[1] for r in result]
+    raws = [r.raw for r in result]
+    totals = [r.total for r in result]
     assert min(raws) == 1
     assert max(raws) == 20
     assert min(totals) == 1
@@ -42,8 +42,8 @@ def test_d20():
 
 def test_mod_d20():
     result = [roll20(5) for i in range(1000)]
-    raws = [r[0] for r in result]
-    totals = [r[1] for r in result]
+    raws = [r.raw for r in result]
+    totals = [r.total for r in result]
     assert min(raws) == 1
     assert max(raws) == 20
     assert min(totals) == 6
